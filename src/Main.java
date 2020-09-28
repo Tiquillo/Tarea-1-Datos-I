@@ -3,7 +3,14 @@ import java.io.IOException;
 import java.net.Socket;
 import java.net.ServerSocket;
 
+/** Corre el programa
+ * @author Luis Delgado
+ * @version 1.2
+ * @since 0.6
+*/
+
 public class Main {
+
 
     public static void main(String[] args) throws IOException {
 

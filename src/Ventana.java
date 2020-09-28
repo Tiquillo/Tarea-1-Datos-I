@@ -7,11 +7,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/** Muestra la interfaz gráfica en pantalla
+ * @author Luis Delgado
+ * @version 1.2
+ * @since 0.1
+*/
+
 public class Ventana extends JFrame {
 
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
     private JLabel textoEscribirMensaje;
     private JTextField cajaMensaje;
@@ -34,11 +37,17 @@ public class Ventana extends JFrame {
     private int puertoActual = 0;
     private String puertoActualStr = "0";
 
+    /** Constructor
+    */
+    
     public Ventana() {
         super(); // contructor de la clase padre JFrame
         configurarVentana(); // configura la ventana
         inicializarComponentes(); // inicializa los atributos o componentes
     }
+
+    /** Configura aspectos básicos de la ventana
+    */
 
     private void configurarVentana() {
         this.setTitle("App de chat"); // colocamos titulo a la ventana
@@ -49,6 +58,10 @@ public class Ventana extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // hacemos que cuando se cierre la ventana termina todo
                                                              // proceso
     }
+
+    /**
+     * 
+     */
 
     private void inicializarComponentes() {
 
