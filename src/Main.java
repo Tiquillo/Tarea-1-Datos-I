@@ -11,6 +11,10 @@ import java.net.ServerSocket;
 
 public class Main {
 
+    /** Ejecuta el programa de forma inmediata
+     * @param args
+     * @throws IOException
+     */
 
     public static void main(String[] args) throws IOException {
 

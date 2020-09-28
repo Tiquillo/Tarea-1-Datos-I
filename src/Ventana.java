@@ -189,6 +189,10 @@ public class Ventana extends JFrame {
         }
     };
 
+    /** Cambia de chat cuando cambia la selección en la lista
+     * @param información del evento
+     */
+
     ListSelectionListener CambiarChat = new ListSelectionListener() {
         
         @Override
@@ -208,6 +212,11 @@ public class Ventana extends JFrame {
             
         }
     };
+
+    /** Añade el mensaje entrante al chat
+     * @param mensaje entrante
+     * @param puerto de origen
+     */
 
     public void AñadirMensaje (final String mensaje, final String puerto) {
 
@@ -237,11 +246,19 @@ public class Ventana extends JFrame {
         
     }
 
+    /** Coloca un label con el puerto reservado
+     * @param puerto reservado
+     */
+
     public void EstablecerPuertoEnUso (final int puerto) {
 
         puertoEnUsoLabel.setText("Puerto: " + puerto);
         puertoEnUso = puerto;
     }
+
+    /** Crea una pequeña ventana emergente con un mensaje personalizado
+     * @param texto para mostar
+     */
 
     private void MensajeEmergente(final String texto) {
 
