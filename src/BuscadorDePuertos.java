@@ -33,6 +33,11 @@ public class BuscadorDePuertos {
         return (resultado);
     }
 
+    /** Busca un puerto disponible, comenzando en 40 000
+     * 
+     * @return puerto disponible
+     */
+
     public int BuscaPuerto() {
 
         int puerto = 40000;
