@@ -59,8 +59,7 @@ public class Ventana extends JFrame {
                                                              // proceso
     }
 
-    /**
-     * 
+    /** Inicializa los componentes usados para la interfaz y atributos de los mensajes
      */
 
     private void inicializarComponentes() {
@@ -117,6 +116,10 @@ public class Ventana extends JFrame {
         this.add(listaChatsVisual);
     }
 
+    /** Realiza una acción al tocar el botón Añadir Chat
+     * @param información del evento
+     */
+
     ActionListener nuevoChat = new ActionListener() {
         @Override
         public void actionPerformed(final ActionEvent aEvent) {
@@ -160,6 +163,10 @@ public class Ventana extends JFrame {
             }
         }
     };
+
+    /** Envía el mensaje al puerto del chat abierto
+     * @param información del evento
+     */
 
     ActionListener envioMensaje = new ActionListener() {
         @Override
