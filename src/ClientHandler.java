@@ -1,13 +1,15 @@
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+
+/** Controla la recepción de mensajes
+ * @author Luis Delgado
+ * @version 1.2
+ * @since 0.7
+ */
 
 public class ClientHandler extends Thread{
 
-    DateFormat fecha = new SimpleDateFormat("yyy/mm/dd");
-    DateFormat hora = new SimpleDateFormat("hh:mm:ss");
 
     final DataInputStream in;
     final Socket socket;
@@ -20,6 +22,7 @@ public class ClientHandler extends Thread{
     }
 
     public void run() {
+
         String recibido;
         while (true) {
             try {
