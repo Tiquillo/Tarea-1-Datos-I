@@ -1,8 +1,20 @@
 import java.net.ServerSocket;
 
+/** Busca un puerto disponoble para recibir mensajes
+ * @author Luis Delgado
+ * @version 1.2
+ * @since 0.2
+ */
+
 public class BuscadorDePuertos {
 
     private ServerSocket serverSocket;
+
+    /** Prueba si un puerto está disponible
+     * 
+     * @param puerto de prueba
+     * @return valor buleano de si el puerto está disponible
+     */
 
     private boolean RevisaPuerto(int puerto) {
         boolean resultado;

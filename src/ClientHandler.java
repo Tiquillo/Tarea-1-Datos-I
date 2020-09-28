@@ -15,11 +15,21 @@ public class ClientHandler extends Thread{
     final Socket socket;
     Ventana ventana;
 
+    /** Constructor
+     * 
+     * @param socket
+     * @param in
+     * @param ventana
+     */
+
     public ClientHandler(Socket socket, DataInputStream in, Ventana ventana){
         this.socket = socket;
         this.in = in;
         this.ventana = ventana;
     }
+
+    /** Ejecuta el receptor en bucle
+     */
 
     public void run() {
 
