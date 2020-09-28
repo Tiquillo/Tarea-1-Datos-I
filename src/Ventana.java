@@ -9,6 +9,10 @@ import java.util.Map;
 
 public class Ventana extends JFrame {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private JLabel textoEscribirMensaje;
     private JTextField cajaMensaje;
     private JButton botonEnviar;
@@ -19,8 +23,6 @@ public class Ventana extends JFrame {
     private JLabel puertoEnUsoLabel;
     private JList listaChatsVisual;
     private int puertoEnUso;
-    // private ArrayList<String> listaChats;
-    private ArrayList<String> contenidoChatActual;
     private DefaultListModel listaDeChats;
     private boolean chatAbierto = false;
 
@@ -67,7 +69,8 @@ public class Ventana extends JFrame {
         cajaMensaje.setBounds(170, 425, 240, 25); // colocamos posicion y tamaño a la caja (x, y, ancho, alto)
         botonEnviar.setText("Enviar"); // colocamos un texto al boton
         botonEnviar.setBounds(412, 425, 70, 25); // colocamos posicion y tamanio al boton (x, y, ancho, alto)
-        botonEnviar.addActionListener(envioMensaje); // hacemos que el boton tenga una accion y esa accion estara en esta clase
+        botonEnviar.addActionListener(envioMensaje); // hacemos que el boton tenga una accion y esa accion estara en
+                                                     // esta clase
 
         // para interactuar con chats
 
@@ -77,7 +80,7 @@ public class Ventana extends JFrame {
         listaChatsVisual.addListSelectionListener(CambiarChat);
         listaChatsVisual.setBounds(10, 40, 150, 330);
 
-        contenidoChatActual = new ArrayList<String>();
+        new ArrayList<String>();
 
         // añadir chats
 
@@ -103,11 +106,11 @@ public class Ventana extends JFrame {
 
     ActionListener nuevoChat = new ActionListener() {
         @Override
-        public void actionPerformed(ActionEvent aEvent) {
+        public void actionPerformed(final ActionEvent aEvent) {
 
             cajaPuertoNuevoChat.setText(cajaPuertoNuevoChat.getText().replace(" ", "")); // quitar espacios de un String: // http://chuwiki.chuidiang.org/index.php?title=Eliminar_espacios_de_un_String_en_Java
 
-            String contenidoCaja = cajaPuertoNuevoChat.getText();
+            final String contenidoCaja = cajaPuertoNuevoChat.getText();
             int contenidoCajaInt = 0;
 
             try {
@@ -115,7 +118,7 @@ public class Ventana extends JFrame {
                 contenidoCajaInt = Integer.parseInt(contenidoCaja);
                 todosLosChats.put(puertoActualStr, cajaChat.getText());
 
-            } catch (Exception e) {
+            } catch (final Exception e) {
 
                 MensajeEmergente("Introduza un puerto válido.");
                 return;
@@ -147,8 +150,8 @@ public class Ventana extends JFrame {
 
     ActionListener envioMensaje = new ActionListener() {
         @Override
-        public void actionPerformed(ActionEvent e) {
-            String contenidoCaja = cajaMensaje.getText();
+        public void actionPerformed(final ActionEvent e) {
+            final String contenidoCaja = cajaMensaje.getText();
             if (contenidoCaja.isEmpty() == false) {
 
                 if (!chatAbierto) {
@@ -169,7 +172,7 @@ public class Ventana extends JFrame {
     ListSelectionListener CambiarChat = new ListSelectionListener() {
         
         @Override
-        public void valueChanged(ListSelectionEvent event) {
+        public void valueChanged(final ListSelectionEvent event) {
             
             if (!event.getValueIsAdjusting()) {
 
@@ -186,7 +189,7 @@ public class Ventana extends JFrame {
         }
     };
 
-    public void AñadirMensaje (String mensaje, String puerto) {
+    public void AñadirMensaje (final String mensaje, final String puerto) {
 
         if (puertoActualStr.equals(puerto)){
 
@@ -200,7 +203,7 @@ public class Ventana extends JFrame {
 
             try {
                 todosLosChats.get(puerto).equals(null);         // si el chat no existe, lanza una excepción
-            } catch (Exception e) {
+            } catch (final Exception e) {
 
                 todosLosChats.put(puerto, mensaje + "\n");      // entonces simplemente crea el chat con el primer mensaje
                 return;
@@ -214,13 +217,13 @@ public class Ventana extends JFrame {
         
     }
 
-    public void EstablecerPuertoEnUso (int puerto) {
+    public void EstablecerPuertoEnUso (final int puerto) {
 
         puertoEnUsoLabel.setText("Puerto: " + puerto);
         puertoEnUso = puerto;
     }
 
-    private void MensajeEmergente(String texto) {
+    private void MensajeEmergente(final String texto) {
 
         JOptionPane.showMessageDialog(this, texto);
     }
